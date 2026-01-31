@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">remedjadu</string>
+    <string name="back">Kembali</string>
+    <string name="deskripsi_no_item">Belum ada data</string>
+    <string name="home_buku">Daftar Buku</string>
+    <string name="entry_buku">Tambah Buku</string>
+    <string name="edit_buku">Edit Buku</string>
+    <string name="judul_buku">Judul Buku</string>
+    <string name="kategori_buku">Kategori</string>
+    <string name="simpan">Simpan</string>
+    <string name="input_invalid">Input tidak valid</string>
+    <string name="detail_buku">Detail Buku</string>
+</resources>
