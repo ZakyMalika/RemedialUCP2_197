@@ -9,8 +9,15 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.remedjadu.view.*
-import com.example.remedjadu.view.route.*
+import com.example.remedjadu.view.DetailBukuScreen
+import com.example.remedjadu.view.EditBukuScreen
+import com.example.remedjadu.view.EntryBukuScreen
+import com.example.remedjadu.view.HomeScreen
+import com.example.remedjadu.view.route.DestinasiDetailBuku
+import com.example.remedjadu.view.route.DestinasiEditBuku
+import com.example.remedjadu.view.route.DestinasiEntryBuku
+import com.example.remedjadu.view.route.DestinasiHome
+
 
 @Composable
 fun BukuApp(
@@ -56,8 +63,13 @@ fun HostNavigasi(
                     type = NavType.IntType
                 }
             )
-        ) {
+        ) { backStackEntry ->
+
+            val bukuId =
+                backStackEntry.arguments?.getInt(DestinasiDetailBuku.itemIdArg) ?: 0
+
             DetailBukuScreen(
+                bukuId = bukuId,
                 navigateToEdit = {
                     navController.navigate("${DestinasiEditBuku.route}/$it")
                 },
@@ -72,8 +84,13 @@ fun HostNavigasi(
                     type = NavType.IntType
                 }
             )
-        ) {
+        ) { backStackEntry ->
+
+            val bukuId =
+                backStackEntry.arguments?.getInt(DestinasiEditBuku.itemIdArg) ?: 0
+
             EditBukuScreen(
+                bukuId = bukuId,
                 navigateBack = { navController.popBackStack() }
             )
         }
